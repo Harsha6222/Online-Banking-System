@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Banking System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Online Banking System</h1>
+    </header>
+    <main>
+        <div id="loginContainer">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div>
+                    <label for="loginUsername">Username:</label>
+                    <input type="text" id="loginUsername" name="loginUsername" required>
+                </div>
+                <div>
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" name="loginPassword" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="showRegisterForm">Register here</a>.</p>
+        </div>
+        
+        <div id="registerContainer" style="display: none;">
+            <h2>Register</h2>
+            <form id="registerForm">
+                <div>
+                    <label for="registerUsername">Username:</label>
+                    <input type="text" id="registerUsername" name="registerUsername" required>
+                </div>
+                <div>
+                    <label for="registerPassword">Password:</label>
+                    <input type="password" id="registerPassword" name="registerPassword" required>
+                </div>
+                <div>
+                    <label for="registerPhone">Phone Number:</label>
+                    <input type="text" id="registerPhone" name="registerPhone" required>
+                </div>
+                <div>
+                    <label for="registerEmail">Email:</label>
+                    <input type="email" id="registerEmail" name="registerEmail" required>
+                </div>
+                <div>
+                    <label for="registerAccountNumber">Account Number:</label>
+                    <input type="text" id="registerAccountNumber" name="registerAccountNumber" required>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <a href="#" id="showLoginForm">Login here</a>.</p>
+        </div>
+        
+        <div id="dashboard" style="display: none;">
+            <h2>Welcome, <span id="loggedInUsername"></span>!</h2>
+            <p>Balance: <span id="balanceDisplay">$0.00</span></p>
+            <button id="depositBtn">Deposit</button>
+            <button id="withdrawBtn">Withdraw</button>
+            <div id="transferOptions">
+                <input type="radio" id="transferByAccount" name="transferOption" value="account">
+                <label for="transferByAccount">Transfer by Account Number</label>
+                <input type="radio" id="transferByPhone" name="transferOption" value="phone">
+                <label for="transferByPhone">Transfer by Phone Number</label>
+            </div>
+            <button id="showTransferFormBtn">Transfer</button>
+            <button id="changePasswordBtn">Change Password</button>
+            <button id="closeAccountBtn">Close Account</button>
+            <button id="logoutBtn">Logout</button>
+
+            <!-- Transfer Form -->
+            <div id="transferForm" style="display: none;">
+                <h3>Transfer Funds</h3>
+                <form id="actualTransferForm">
+                    <div>
+                        <label id="recipientLabel" for="transferRecipient">Recipient Account or Phone:</label>
+                        <input type="text" id="transferRecipient" name="transferRecipient" required>
+                    </div>
+                    <div>
+                        <label for="transferAmount">Amount:</label>
+                        <input type="number" id="transferAmount" name="transferAmount" min="0.01" step="0.01" required>
+                    </div>
+                    <button type="submit">Transfer</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Online Banking System. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
